@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Madad - Help in your Budget</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MADAD</div>
+    <nav>
+      <ul>
+        <li><a href="#">All Services</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><button class="btn" onclick="openModal('register')">Register</button></li>
+        <li><button class="btn login" onclick="openModal('login')">Login</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Help in your budget</h1>
+    <p>Madad – A help for you</p>
+  </section>
+
+  <section class="services">
+    <div class="card"><img src="assets/househelp.svg" alt="Househelp"><h3>Hire a househelp</h3></div>
+    <div class="card"><img src="assets/painter.svg" alt="Painter"><h3>Paint your wall</h3></div>
+    <div class="card"><img src="assets/driver.svg" alt="Driver"><h3>Hire a driver</h3></div>
+    <div class="card"><img src="assets/labour.svg" alt="Labour"><h3>Hire a labour</h3></div>
+    <div class="card"><img src="assets/carpenter.svg" alt="Carpenter"><h3>Get a carpenter</h3></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Madad. All rights reserved.</p>
+  </footer>
+
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('register')">&times;</span>
+      <h2>Register</h2>
+      <input type="text" placeholder="Full Name" />
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button onclick="registerUser()">Submit</button>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('login')">&times;</span>
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button onclick="loginUser()">Login</button>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs (compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics-compat.js"></script>
+
+  <!-- Your JS -->
+  <script src="script.js"></script>
+</body>
+</html>
