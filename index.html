@@ -1,67 +1,358 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en-IN" class="theme light classic">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Madad - Help in your Budget</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="utf-8">
+    <title>Madad - Help in your Budget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Main styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Aileron', sans-serif;
+            background-color: #ffffff;
+            color: #002f69;
+            line-height: 1.6;
+        }
+        
+        /* Container styles */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header styles */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        /* Service cards */
+        .services-section {
+            padding: 20px 0;
+        }
+        
+        .services-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #002f69;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+        
+        .service-card {
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .service-card.blue {
+            background-color: #002f69;
+            color: white;
+        }
+        
+        .service-card.light {
+            background-color: #eaebef;
+            color: #002f69;
+        }
+        
+        .service-icon {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            max-width: 80%;
+        }
+        
+        .service-btn {
+            margin-top: auto;
+            align-self: flex-start;
+            background-color: #0087ff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .service-btn:hover {
+            background-color: #0066cc;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(to bottom, #2e308b, #48e9f1);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+        
+        .footer p {
+            margin-top: 20px;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #002f69;
+        }
+        
+        .modal h2 {
+            margin-bottom: 20px;
+            color: #002f69;
+        }
+        
+        .modal input {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .modal button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0087ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .modal button:hover {
+            background-color: #0066cc;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .services-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Aileron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="page-container">
+        <!-- Header with logo -->
+        <header class="header">
+            <img src="logo.png" alt="Madad Logo" class="logo">
+            <h1>Madad - Help in your budget</h1>
+        </header>
+        
+        <!-- Services section -->
+        <section class="services-section">
+            <h2>All Services</h2>
+            
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card light">
+                    <div class="service-icon">
+                       <img src="assets/househelp.svg" alt="Househelp">
+                    </div>
+                    <h3>Hire a househelp</h3>
+                    <button class="service-btn">Learn More</button>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card blue">
+                    <div class="service-icon">
+                        <img src="assets/painter.svg" alt="Painter">
+                    </div>
+                    <h3>Paint your wall</h3>
+                    <button class="service-btn">Learn More</button>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card light">
+                    <div class="service-icon">
+                        <img src="assets/driver.svg" alt="Driver">
+                    </div>
+                    <h3>Hire a driver for your own vehicle</h3>
+                    <button class="service-btn">Learn More</button>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card blue">
+                    <div class="service-icon">
+                        <img src="assets/carpenter.svg" alt="Carpenter">
+                    </div>
+                    <h3>Get a carpenter at your doorstep</h3>
+                    <button class="service-btn">Learn More</button>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card light">
+                    <div class="service-icon">
+                        <img src="assets/labour.svg" alt="Labour">
+                    </div>
+                    <h3>Hire a labour for Construction</h3>
+                    <button class="service-btn">Learn More</button>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card blue">
+                    <div class="service-icon">
+                        <img src="assets/contact.svg" alt="Contact icon">
+                    </div>
+                    <h3>Contact Us</h3>
+                    <button class="service-btn">Learn More</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer with CTA -->
+        <footer class="footer">
+            <h2>Ready to get help?</h2>
+            <div>
+  <button class="service-btn" onclick="openModal('register')">Register</button>
+  <button class="service-btn" style="background-color: transparent; border: 2px solid white; margin-left: 15px;" onclick="openModal('login')">Login</button>
+</div>
 
-  <header>
-    <div class="logo">MADAD</div>
-    <nav>
-      <ul>
-        <li><a href="#">All Services</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><button class="btn" onclick="openModal('register')">Register</button></li>
-        <li><button class="btn login" onclick="openModal('login')">Login</button></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Madad</h1>
-    <p>Help in your Budget</p>
-  </section>
-
-  <section class="services">
-    <div class="card"><img src="assets/househelp.svg" alt="Househelp"><h3>Hire a househelp</h3></div>
-    <div class="card"><img src="assets/painter.svg" alt="Painter"><h3>Paint your wall</h3></div>
-    <div class="card"><img src="assets/driver.svg" alt="Driver"><h3>Hire a driver</h3></div>
-    <div class="card"><img src="assets/labour.svg" alt="Labour"><h3>Hire a labour</h3></div>
-    <div class="card"><img src="assets/carpenter.svg" alt="Carpenter"><h3>Get a carpenter</h3></div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Madad. All rights reserved.</p>
-  </footer>
-
-  <!-- Register Modal -->
-  <div id="registerModal" class="modal">
+<!-- Register Modal -->
+<div id="registerModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('register')">&times;</span>
-      <h2>Register</h2>
-      <input type="text" placeholder="Full Name" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button onclick="registerUser()">Submit</button>
+        <span class="close" onclick="closeModal('register')">&times;</span>
+        <h2>Register</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button onclick="registerUser()">Submit</button>
     </div>
-  </div>
+</div>
 
-  <!-- Login Modal -->
-  <div id="loginModal" class="modal">
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('login')">&times;</span>
-      <h2>Login</h2>
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button onclick="loginUser()">Login</button>
+        <span class="close" onclick="closeModal('login')">&times;</span>
+        <h2>Login</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button onclick="loginUser()">Login</button>
     </div>
-  </div>
+</div>
 
-  <!-- Firebase SDKs (compat) -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<!-- Keep these scripts at the bottom -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics-compat.js"></script>
+<script src="script.js"></script>
+            <p>&copy; 2025 Madad. All rights reserved.</p>
+        </footer>
+    </div>
+	<div>
+  <button class="service-btn" onclick="openModal('register')">Register</button>
+  <button class="service-btn" style="background-color: transparent; border: 2px solid white; margin-left: 15px;" onclick="openModal('login')">Login</button>
+</div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button class="service-btn" onclick="openModal('register')">Register</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button class="service-btn" style="background-color: transparent; border: 2px solid white; margin-left: 15px;" onclick="openModal('login')">Login</button>
+        </div>
+    </div>
+	  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics-compat.js"></script>
 

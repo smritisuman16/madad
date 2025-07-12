@@ -1,9 +1,9 @@
-/* Base styling remains the same */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #f9f9f9;
   color: #333;
   margin: 0;
+  line-height: 1.6;
 }
 
 /* Header */
@@ -16,56 +16,107 @@ header {
   align-items: center;
 }
 
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.2em;
-  align-items: center;
+  gap: 1.5em;
 }
 
-nav .btn {
-  padding: 0.5em 1em;
-  background: transparent;
-  border: 2px solid #fff;
+nav a {
   color: #fff;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-nav .login {
-  background: #fff;
-  color: #003366;
+  text-decoration: none;
 }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 4em 1em;
+  padding: 3em 1em;
   background: #e6f2ff;
 }
 
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  font-size: 1.2em;
+  text-transform: lowercase;
+}
+
+/* Services */
 .services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5em;
   padding: 2em;
   background: #fff;
 }
 
-.card {
+.services h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-size: 1.8em;
+}
+
+.service-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-category {
+  flex: 1;
+  min-width: 300px;
   background: #f0f8ff;
   padding: 1.5em;
   border-radius: 10px;
-  text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.card img {
-  width: 60px;
-  margin-bottom: 1em;
+.service-category h3 {
+  margin-top: 0;
+  color: #003366;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5em;
 }
 
+.service-category ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.service-category li {
+  padding: 0.5em 0;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  padding: 2em;
+  background: #e6f2ff;
+}
+
+.auth-buttons .btn {
+  padding: 0.8em 2em;
+  background: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+/* Footer */
 footer {
   background: #003366;
   color: #fff;
