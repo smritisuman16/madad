@@ -77,16 +77,120 @@
             background-color: #002f69;
             color: white;
         }
+		.service-card.blue h3 {
+    margin-top: 40px; /* adjust value as needed */
+}
+.painter-bg {
+    background-image: url('assets/painterbg.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.painter-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7); /* Adjust opacity as needed */
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.painter-bg > * {
+    position: relative;
+    z-index: 1;
+}
+.carpenter-bg {
+    background-image: url('assets/carpenterbg.webp'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.carpenter-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7); /* Adjust opacity as needed */
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.carpenter-bg > * {
+    position: relative;
+    z-index: 1;
+}
         
         .service-card.light {
             background-color: #eaebef;
             color: #002f69;
         }
+		.service-card.light h3 {
+    margin-top: 40px; /* adjust value as needed */
+}
+
+		.househelp-bg {
+    background-image: url('assets/househelp.avif'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.househelp-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7); /* Adjust opacity as needed */
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.househelp-bg > * {
+    position: relative;
+    z-index: 1;
+}
+.driver-bg {
+    background-image: url('assets/driverbg.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.driver-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7); /* Adjust opacity as needed */
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.driver-bg > * {
+    position: relative;
+    z-index: 1;
+}
+.labour-bg {
+    background-image: url('assets/labourbg.jpg'); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.labour-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7); /* Adjust opacity as needed */
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.labour-bg > * {
+    position: relative;
+    z-index: 1;
+}
+
+
         
         .service-icon {
             position: absolute;
             top: 25px;
-            right: 25px;
+            right: 40px;
             width: 40px;
             height: 40px;
         }
@@ -221,7 +325,7 @@
     <div class="page-container">
         <!-- Header with logo -->
         <header class="header">
-            <img src="logo.png" alt="Madad Logo" class="logo">
+            <img src="assets/logo.png" alt="Madad Logo" class="logo">
             <h1>Madad - Help in your budget</h1>
         </header>
         
@@ -231,48 +335,48 @@
             
             <div class="services-grid">
                 <!-- Service Card 1 -->
-                <div class="service-card light">
+                <div class="service-card light househelp-bg">
                     <div class="service-icon">
                        <img src="assets/househelp.svg" alt="Househelp">
                     </div>
                     <h3>Hire a househelp</h3>
-                    <button class="service-btn">Learn More</button>
+                    <button class="service-btn">Book Now</button>
                 </div>
                 
                 <!-- Service Card 2 -->
-                <div class="service-card blue">
+                <div class="service-card blue painter-bg">
                     <div class="service-icon">
                         <img src="assets/painter.svg" alt="Painter">
                     </div>
                     <h3>Paint your wall</h3>
-                    <button class="service-btn">Learn More</button>
+                    <button class="service-btn">Book Now</button>
                 </div>
                 
                 <!-- Service Card 3 -->
-                <div class="service-card light">
+                <div class="service-card light driver-bg">
                     <div class="service-icon">
                         <img src="assets/driver.svg" alt="Driver">
                     </div>
                     <h3>Hire a driver for your own vehicle</h3>
-                    <button class="service-btn">Learn More</button>
+                    <button class="service-btn">Book Now</button>
                 </div>
                 
                 <!-- Service Card 4 -->
-                <div class="service-card blue">
+                <div class="service-card blue carpenter-bg">
                     <div class="service-icon">
                         <img src="assets/carpenter.svg" alt="Carpenter">
                     </div>
                     <h3>Get a carpenter at your doorstep</h3>
-                    <button class="service-btn">Learn More</button>
+                    <button class="service-btn">Book Now</button>
                 </div>
                 
                 <!-- Service Card 5 -->
-                <div class="service-card light">
+                <div class="service-card light labour-bg">
                     <div class="service-icon">
                         <img src="assets/labour.svg" alt="Labour">
                     </div>
                     <h3>Hire a labour for Construction</h3>
-                    <button class="service-btn">Learn More</button>
+                    <button class="service-btn">Book Now</button>
                 </div>
                 
                 <!-- Service Card 6 -->
@@ -281,7 +385,7 @@
                         <img src="assets/contact.svg" alt="Contact icon">
                     </div>
                     <h3>Contact Us</h3>
-                    <button class="service-btn">Learn More</button>
+                    <button class="service-btn">Book Now</button>
                 </div>
             </div>
         </section>
@@ -325,10 +429,7 @@
             <p>&copy; 2025 Madad. All rights reserved.</p>
         </footer>
     </div>
-	<div>
-  <button class="service-btn" onclick="openModal('register')">Register</button>
-  <button class="service-btn" style="background-color: transparent; border: 2px solid white; margin-left: 15px;" onclick="openModal('login')">Login</button>
-</div>
+	
 
     <!-- Register Modal -->
     <div id="registerModal" class="modal">
